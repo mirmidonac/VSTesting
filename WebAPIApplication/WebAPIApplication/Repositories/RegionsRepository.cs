@@ -1,4 +1,5 @@
-﻿using WebAPIApplication.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using WebAPIApplication.Data;
 using WebAPIApplication.Models.Domains;
 
 namespace WebAPIApplication.Repositories
@@ -11,9 +12,9 @@ namespace WebAPIApplication.Repositories
         { 
         this.webAPIDBContext = webAPIDBContext;
         }
-        public IEnumerable<Regions> GetAll()
+        public async Task<IEnumerable<Regions>> GetAllAsync()
         {
-            return webAPIDBContext.Regions.ToList();
+            return await webAPIDBContext.Regions.ToListAsync();
         }
     }
 }

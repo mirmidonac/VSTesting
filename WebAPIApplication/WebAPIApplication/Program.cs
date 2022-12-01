@@ -17,6 +17,10 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("WebAPIConnection
 //Where ever asked for IRegionsRepository return RegionsRepository method
 builder.Services.AddScoped<IRegionsRepository, RegionsRepository>();
 
+//automapper injection
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
