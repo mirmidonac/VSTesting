@@ -9,6 +9,10 @@
         public Double Long { get; set; }
         public Double Lat { get; set; }
         public long Population { get; set; }
+
+        //Navigation via EntityFramework
+        public IEnumerable <Walk> Walk { get; set; }
+
                    
     }
 }
